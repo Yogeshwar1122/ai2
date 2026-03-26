@@ -1,0 +1,123 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 7: Electric & Neon (Retro-Futurism / Terminal Look)",
+  "typography": {
+    "headings": {
+      "font_family": "JetBrains Mono",
+      "classes": "font-mono tracking-tighter"
+    },
+    "body": {
+      "font_family": "IBM Plex Sans",
+      "classes": "font-sans leading-relaxed tracking-wide"
+    },
+    "data_labels": {
+      "font_family": "JetBrains Mono",
+      "classes": "font-mono uppercase tracking-[0.2em] text-xs"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#030303",
+      "secondary": "#0A0A0A",
+      "surface": "#0F1115",
+      "glass": "rgba(10, 10, 10, 0.85)"
+    },
+    "text": {
+      "primary": "#F9FAFB",
+      "secondary": "#9CA3AF",
+      "accent": "#10B981",
+      "muted": "#4B5563"
+    },
+    "accents": {
+      "primary": "#10B981",
+      "primary_glow": "rgba(16, 185, 129, 0.4)",
+      "warning": "#F59E0B",
+      "danger": "#EF4444",
+      "terminal_green": "#00FF41"
+    },
+    "borders": {
+      "default": "rgba(16, 185, 129, 0.2)",
+      "highlight": "rgba(16, 185, 129, 0.6)",
+      "danger": "rgba(239, 68, 68, 0.4)"
+    }
+  },
+  "layout_and_spacing": {
+    "strategy": "The Control Room Grid",
+    "classes": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4",
+    "padding_scale": "p-4 sm:p-6 lg:p-8",
+    "widget_classes": "col-span-1 md:col-span-2 row-span-2 h-full flex flex-col"
+  },
+  "components_strategy": {
+    "cards": {
+      "style": "Retro-Futurism / Terminal Look",
+      "classes": "bg-[#0A0A0A] border border-[#10B981]/20 rounded-sm relative overflow-hidden",
+      "hover": "hover:border-[#10B981]/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-all duration-300"
+    },
+    "buttons": {
+      "primary": "bg-[#10B981]/10 border border-[#10B981] text-[#10B981] hover:bg-[#10B981] hover:text-black rounded-sm uppercase tracking-wider text-sm font-mono transition-all",
+      "danger": "bg-[#EF4444]/10 border border-[#EF4444] text-[#EF4444] hover:bg-[#EF4444] hover:text-black rounded-sm uppercase tracking-wider text-sm font-mono transition-all"
+    },
+    "inputs": {
+      "style": "bg-transparent border-b border-[#10B981]/30 focus:border-[#10B981] text-[#F9FAFB] focus:ring-0 rounded-none px-0 py-2 font-mono text-sm transition-colors placeholder:text-[#4B5563]"
+    },
+    "dialogs": {
+      "style": "bg-[#0A0A0A]/95 backdrop-blur-xl border border-[#10B981]/30 shadow-[0_0_30px_rgba(16,185,129,0.15)] rounded-sm"
+    }
+  },
+  "visual_enhancers": {
+    "effects": [
+      "Scanlines: CSS repeating-linear-gradient overlay (rgba(0,0,0,0.15) 1px, transparent 2px) across main background",
+      "Blinking Cursor: Animated rect element for active terminal inputs",
+      "Glow: drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] on critical security status icons",
+      "Tracing Beam: Use a glowing moving border around the main login card or threat logs"
+    ],
+    "icons": {
+      "library": "phosphor-icons",
+      "package": "@phosphor-icons/react",
+      "weight": "regular"
+    }
+  },
+  "animations": {
+    "hover": "Subtle border glow increase and color inversion on buttons",
+    "data_entry": "Typewriter effect for logs, threat feeds, and encryption status terminal output",
+    "entrance": "Staggered fade in with slight y-axis transform (-translate-y-2 to 0)"
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/7a24377a-5bc0-4bb3-910b-768e027cf8dd/images/c95228b9b82cfeba62a52867c2a3a0f5c52116ab08c53c04c2e0d9215c5472fd.png",
+        "description": "Abstract dark mode cybersecurity background, glowing green binary data streams",
+        "category": "hero_background"
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/7a24377a-5bc0-4bb3-910b-768e027cf8dd/images/3519c13e943b25f0898afa17723558cd87c5b9f018041b3e6fe5ccdaed5fcb13.png",
+        "description": "Modern hacker terminal aesthetic texture, dark gray and black grid with glowing neon green nodes",
+        "category": "dashboard_texture_overlay"
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/7a24377a-5bc0-4bb3-910b-768e027cf8dd/images/c1f8d0758e7fc20d0b7b9c089fcfc5af4cf6c0275580dc1da1a1b429b64443fc.png",
+        "description": "Fingerprint biometric scan abstract visualization, dark mode, glowing emerald green lines",
+        "category": "biometric_auth_illustration"
+      },
+      {
+        "url": "https://images.pexels.com/photos/36545253/pexels-photo-36545253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Intricate black geometric pattern featuring diamond shapes",
+        "category": "generic_tech_background"
+      }
+    ]
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure green text meets 4.5:1 ratio against pure black backgrounds",
+    "data_testid_rules": "All interactive elements, buttons, form inputs, threat log items, and security toggles MUST have a data-testid attribute in kebab-case."
+  },
+  "instructions_to_main_agent": [
+    "Install `@phosphor-icons/react` for technical, sharp iconography.",
+    "Use Shadcn UI components but heavily override them: remove soft rounded corners (`rounded-md`, `rounded-lg`) and replace with `rounded-sm` or `rounded-none`.",
+    "Remove default Shadcn subtle gray borders and replace with stark `border-[#10B981]/20` for a terminal grid feel.",
+    "Data components (tables, charts, logs) should be dense, maximizing the 'Control Room' screen space. Remove unnecessary whitespace.",
+    "Use JetBrains Mono for all numbers, metrics, data points, inputs, and headings. Use IBM Plex Sans for long-form reading and body copy only.",
+    "The UI should feel like a high-end secure terminal: dark, precise, with no unnecessary soft gradients.",
+    "Ensure all major interactions (login, verify, lock config) have clearly visible `data-testid` attributes.",
+    "Charts must be monochromatic green with red/amber accents for anomalies or threats. Avoid playful or multi-colored chart palettes."
+  ]
+}
