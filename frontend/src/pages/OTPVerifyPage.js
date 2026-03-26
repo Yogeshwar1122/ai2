@@ -84,7 +84,7 @@ export default function OTPVerifyPage({ mfaData, onVerified, onBack }) {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative" style={{ background: '#030303' }}>
       <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: 'linear-gradient(rgba(16,185,129,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.3) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(236,72,153,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(236,72,153,0.3) 1px, transparent 1px)',
         backgroundSize: '40px 40px'
       }} />
 
@@ -92,7 +92,7 @@ export default function OTPVerifyPage({ mfaData, onVerified, onBack }) {
         <button
           data-testid="otp-back-button"
           onClick={onBack}
-          className="flex items-center gap-2 text-[#9CA3AF] hover:text-[#10B981] font-mono text-xs mb-6 transition-colors"
+          className="flex items-center gap-2 text-[#9CA3AF] hover:text-[#EC4899] font-mono text-xs mb-6 transition-colors"
         >
           <ArrowLeft size={14} />
           <span>BACK TO LOGIN</span>
@@ -100,14 +100,14 @@ export default function OTPVerifyPage({ mfaData, onVerified, onBack }) {
 
         <div className="terminal-card p-6 sm:p-8 animate-fade-in" data-testid="otp-verify-card">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-14 h-14 border border-[#10B981]/40 rounded-sm mb-4 bg-[#0A0A0A]">
-              <ChatCircleDots size={28} weight="duotone" className="text-[#10B981] glow-green" />
+            <div className="inline-flex items-center justify-center w-14 h-14 border border-[#EC4899]/40 rounded-sm mb-4 bg-[#0A0A0A]">
+              <ChatCircleDots size={28} weight="duotone" className="text-[#EC4899] glow-green" />
             </div>
             <h2 className="font-mono text-xl font-bold tracking-tighter text-[#F9FAFB]">
               OTP Verification
             </h2>
             <p className="font-sans text-sm text-[#9CA3AF] mt-2">
-              Enter the 6-digit code sent to <span className="text-[#10B981] font-mono">{mfaData.email}</span>
+              Enter the 6-digit code sent to <span className="text-[#EC4899] font-mono">{mfaData.email}</span>
             </p>
             <p className="font-mono text-[10px] text-[#F59E0B] mt-2 uppercase tracking-widest">
               Check server console for OTP code
@@ -128,7 +128,7 @@ export default function OTPVerifyPage({ mfaData, onVerified, onBack }) {
                   onChange={(e) => handleChange(i, e.target.value.replace(/\D/g, ''))}
                   onKeyDown={(e) => handleKeyDown(i, e)}
                   onPaste={i === 0 ? handlePaste : undefined}
-                  className="w-11 h-14 sm:w-12 sm:h-16 text-center text-xl font-mono bg-[#0A0A0A] border border-[#10B981]/20 rounded-sm text-[#00FF41] focus:border-[#10B981] focus:shadow-[0_0_10px_rgba(16,185,129,0.3)] outline-none transition-all"
+                  className="w-11 h-14 sm:w-12 sm:h-16 text-center text-xl font-mono bg-[#0A0A0A] border border-[#EC4899]/20 rounded-sm text-[#FF69B4] focus:border-[#EC4899] focus:shadow-[0_0_10px_rgba(236,72,153,0.3)] outline-none transition-all"
                 />
               ))}
             </div>
@@ -149,7 +149,7 @@ export default function OTPVerifyPage({ mfaData, onVerified, onBack }) {
               <button
                 data-testid="resend-otp-button"
                 onClick={handleResend}
-                className="font-mono text-xs text-[#10B981] hover:text-[#00FF41] transition-colors"
+                className="font-mono text-xs text-[#EC4899] hover:text-[#FF69B4] transition-colors"
               >
                 &gt; Resend OTP
               </button>

@@ -60,18 +60,18 @@ export default function LoginPage({ onMFARequired, onLoginSuccess }) {
     <div className="min-h-screen flex items-center justify-center p-4 relative" style={{ background: '#030303' }}>
       {/* Background grid effect */}
       <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: 'linear-gradient(rgba(16,185,129,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.3) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(236,72,153,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(236,72,153,0.3) 1px, transparent 1px)',
         backgroundSize: '40px 40px'
       }} />
 
       <div className="w-full max-w-md relative">
         {/* Logo */}
         <div className="text-center mb-10 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-16 h-16 border border-[#10B981]/40 rounded-sm mb-4 bg-[#0A0A0A]">
-            <Shield size={32} weight="duotone" className="text-[#10B981] glow-green" />
+          <div className="inline-flex items-center justify-center w-16 h-16 border border-[#EC4899]/40 rounded-sm mb-4 bg-[#0A0A0A]">
+            <Shield size={32} weight="duotone" className="text-[#EC4899] glow-green" />
           </div>
           <h1 className="font-mono text-2xl sm:text-3xl font-bold tracking-tighter text-[#F9FAFB]">
-            LOCK<span className="text-[#10B981]">BOX</span>
+            LOCK<span className="text-[#EC4899]">BOX</span>
           </h1>
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#4B5563] mt-2">
             Secure Authentication System
@@ -80,9 +80,9 @@ export default function LoginPage({ onMFARequired, onLoginSuccess }) {
 
         {/* Login Card */}
         <div className="terminal-card trace-border p-6 sm:p-8 animate-fade-in animate-delay-2" data-testid="login-card">
-          <div className="flex items-center gap-2 mb-6 pb-3 border-b border-[#10B981]/10">
-            <div className="w-2 h-2 rounded-full bg-[#10B981] pulse-green" />
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#10B981]">
+          <div className="flex items-center gap-2 mb-6 pb-3 border-b border-[#EC4899]/10">
+            <div className="w-2 h-2 rounded-full bg-[#EC4899] pulse-green" />
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#EC4899]">
               {isRegister ? '> register_new_identity' : '> authenticate'}
             </span>
           </div>
@@ -144,7 +144,7 @@ export default function LoginPage({ onMFARequired, onLoginSuccess }) {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 text-[#4B5563] hover:text-[#10B981] transition-colors"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 text-[#4B5563] hover:text-[#EC4899] transition-colors"
                   data-testid="toggle-password-visibility"
                 >
                   {showPassword ? <EyeSlash size={18} /> : <Eye size={18} />}
@@ -169,11 +169,11 @@ export default function LoginPage({ onMFARequired, onLoginSuccess }) {
             </button>
           </form>
 
-          <div className="mt-6 pt-4 border-t border-[#10B981]/10 text-center">
+          <div className="mt-6 pt-4 border-t border-[#EC4899]/10 text-center">
             <button
               data-testid="toggle-auth-mode"
               onClick={() => setIsRegister(!isRegister)}
-              className="font-mono text-xs text-[#9CA3AF] hover:text-[#10B981] transition-colors tracking-wide"
+              className="font-mono text-xs text-[#9CA3AF] hover:text-[#EC4899] transition-colors tracking-wide"
             >
               {isRegister ? '> Already have identity? Authenticate' : '> New user? Create identity'}
             </button>
@@ -183,17 +183,17 @@ export default function LoginPage({ onMFARequired, onLoginSuccess }) {
         {/* Security info */}
         <div className="mt-6 flex items-center justify-center gap-4 text-[#4B5563] animate-fade-in animate-delay-4">
           <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest">
-            <Lock size={12} className="text-[#10B981]" />
+            <Lock size={12} className="text-[#EC4899]" />
             <span>AES-256</span>
           </div>
-          <div className="w-px h-3 bg-[#10B981]/20" />
+          <div className="w-px h-3 bg-[#EC4899]/20" />
           <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest">
-            <Shield size={12} className="text-[#10B981]" />
+            <Shield size={12} className="text-[#EC4899]" />
             <span>MFA Enabled</span>
           </div>
-          <div className="w-px h-3 bg-[#10B981]/20" />
+          <div className="w-px h-3 bg-[#EC4899]/20" />
           <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest">
-            <Fingerprint size={12} className="text-[#10B981]" />
+            <Fingerprint size={12} className="text-[#EC4899]" />
             <span>Device Lock</span>
           </div>
         </div>

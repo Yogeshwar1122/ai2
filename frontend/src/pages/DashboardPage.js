@@ -9,13 +9,13 @@ import { getSecurityLogs, getSessions, revokeSession, getAnalytics, getThreats }
 import { toast } from 'sonner';
 
 const severityColors = {
-  info: 'text-[#10B981]',
+  info: 'text-[#EC4899]',
   warning: 'text-[#F59E0B]',
   critical: 'text-[#EF4444]'
 };
 
 const severityBg = {
-  info: 'bg-[#10B981]/10 border-[#10B981]/30',
+  info: 'bg-[#EC4899]/10 border-[#EC4899]/30',
   warning: 'bg-[#F59E0B]/10 border-[#F59E0B]/30',
   critical: 'bg-[#EF4444]/10 border-[#EF4444]/30'
 };
@@ -62,7 +62,7 @@ export default function DashboardPage({ onNavigate }) {
   };
 
   const threatScore = threats?.threat_score ?? 100;
-  const scoreColor = threatScore >= 80 ? '#10B981' : threatScore >= 50 ? '#F59E0B' : '#EF4444';
+  const scoreColor = threatScore >= 80 ? '#EC4899' : threatScore >= 50 ? '#F59E0B' : '#EF4444';
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: Shield },
@@ -74,18 +74,18 @@ export default function DashboardPage({ onNavigate }) {
   return (
     <div className="min-h-screen" style={{ background: '#030303' }}>
       {/* Header */}
-      <header className="border-b border-[#10B981]/20 bg-[#0A0A0A]/80 backdrop-blur-sm sticky top-0 z-50" data-testid="dashboard-header">
+      <header className="border-b border-[#EC4899]/20 bg-[#0A0A0A]/80 backdrop-blur-sm sticky top-0 z-50" data-testid="dashboard-header">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Shield size={24} weight="duotone" className="text-[#10B981]" />
-            <span className="font-mono text-lg font-bold tracking-tighter">LOCK<span className="text-[#10B981]">BOX</span></span>
+            <Shield size={24} weight="duotone" className="text-[#EC4899]" />
+            <span className="font-mono text-lg font-bold tracking-tighter">LOCK<span className="text-[#EC4899]">BOX</span></span>
           </div>
           <div className="flex items-center gap-4">
-            <button data-testid="settings-nav-button" onClick={() => onNavigate('settings')} className="p-2 text-[#9CA3AF] hover:text-[#10B981] transition-colors">
+            <button data-testid="settings-nav-button" onClick={() => onNavigate('settings')} className="p-2 text-[#9CA3AF] hover:text-[#EC4899] transition-colors">
               <Gear size={20} />
             </button>
-            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-[#0F1115] border border-[#10B981]/10 rounded-sm">
-              <div className="w-2 h-2 rounded-full bg-[#10B981]" />
+            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-[#0F1115] border border-[#EC4899]/10 rounded-sm">
+              <div className="w-2 h-2 rounded-full bg-[#EC4899]" />
               <span className="font-mono text-xs text-[#9CA3AF]">{user?.email}</span>
             </div>
             <button data-testid="logout-button" onClick={logoutUser} className="flex items-center gap-1.5 text-[#EF4444]/70 hover:text-[#EF4444] font-mono text-xs transition-colors">
@@ -105,8 +105,8 @@ export default function DashboardPage({ onNavigate }) {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-4 py-2 font-mono text-xs uppercase tracking-wider rounded-sm transition-all whitespace-nowrap ${
                 activeTab === tab.id
-                  ? 'bg-[#10B981]/10 border border-[#10B981]/50 text-[#10B981]'
-                  : 'border border-transparent text-[#4B5563] hover:text-[#9CA3AF] hover:border-[#10B981]/10'
+                  ? 'bg-[#EC4899]/10 border border-[#EC4899]/50 text-[#EC4899]'
+                  : 'border border-transparent text-[#4B5563] hover:text-[#9CA3AF] hover:border-[#EC4899]/10'
               }`}
             >
               <tab.icon size={16} />
@@ -117,7 +117,7 @@ export default function DashboardPage({ onNavigate }) {
 
         {loading ? (
           <div className="flex items-center justify-center h-64">
-            <div className="font-mono text-[#10B981] text-sm animate-pulse">Loading secure data...</div>
+            <div className="font-mono text-[#EC4899] text-sm animate-pulse">Loading secure data...</div>
           </div>
         ) : (
           <>
@@ -129,13 +129,13 @@ export default function DashboardPage({ onNavigate }) {
                   <StatCard icon={ShieldCheck} label="Security Score" value={`${threatScore}%`} valueColor={scoreColor} />
                   <StatCard icon={Pulse} label="Login Attempts" value={analytics?.total_attempts || 0} subtext={`${analytics?.failed || 0} failed`} />
                   <StatCard icon={Desktop} label="Active Sessions" value={sessions.length} />
-                  <StatCard icon={Warning} label="Threats Detected" value={threats?.recent_count || 0} valueColor={threats?.recent_count > 0 ? '#EF4444' : '#10B981'} />
+                  <StatCard icon={Warning} label="Threats Detected" value={threats?.recent_count || 0} valueColor={threats?.recent_count > 0 ? '#EF4444' : '#EC4899'} />
                 </div>
 
                 {/* Threat Score Visual */}
                 <div className="terminal-card p-6" data-testid="threat-score-card">
                   <div className="flex items-center gap-2 mb-4">
-                    <Lightning size={18} className="text-[#10B981]" />
+                    <Lightning size={18} className="text-[#EC4899]" />
                     <h3 className="font-mono text-sm uppercase tracking-wider text-[#F9FAFB]">Security Posture</h3>
                   </div>
                   <div className="flex items-center gap-6">
@@ -161,7 +161,7 @@ export default function DashboardPage({ onNavigate }) {
                 {/* Recent Activity */}
                 <div className="terminal-card p-6" data-testid="recent-activity-card">
                   <div className="flex items-center gap-2 mb-4">
-                    <ClockCounterClockwise size={18} className="text-[#10B981]" />
+                    <ClockCounterClockwise size={18} className="text-[#EC4899]" />
                     <h3 className="font-mono text-sm uppercase tracking-wider text-[#F9FAFB]">Recent Activity</h3>
                   </div>
                   <div className="space-y-2 max-h-64 overflow-y-auto">
@@ -178,7 +178,7 @@ export default function DashboardPage({ onNavigate }) {
             {activeTab === 'logs' && (
               <div className="terminal-card p-6 animate-fade-in" data-testid="logs-panel">
                 <div className="flex items-center gap-2 mb-4">
-                  <Eye size={18} className="text-[#10B981]" />
+                  <Eye size={18} className="text-[#EC4899]" />
                   <h3 className="font-mono text-sm uppercase tracking-wider text-[#F9FAFB]">Security Event Log</h3>
                   <span className="font-mono text-xs text-[#4B5563] ml-auto">{logs.length} events</span>
                 </div>
@@ -195,16 +195,16 @@ export default function DashboardPage({ onNavigate }) {
             {activeTab === 'sessions' && (
               <div className="terminal-card p-6 animate-fade-in" data-testid="sessions-panel">
                 <div className="flex items-center gap-2 mb-4">
-                  <Desktop size={18} className="text-[#10B981]" />
+                  <Desktop size={18} className="text-[#EC4899]" />
                   <h3 className="font-mono text-sm uppercase tracking-wider text-[#F9FAFB]">Active Sessions</h3>
                   <span className="font-mono text-xs text-[#4B5563] ml-auto">{sessions.length} active</span>
                 </div>
                 <div className="space-y-3">
                   {sessions.map((session) => (
-                    <div key={session.id} className="flex items-center justify-between p-3 bg-[#0F1115] border border-[#10B981]/10 rounded-sm" data-testid={`session-${session.id}`}>
+                    <div key={session.id} className="flex items-center justify-between p-3 bg-[#0F1115] border border-[#EC4899]/10 rounded-sm" data-testid={`session-${session.id}`}>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <Fingerprint size={14} className="text-[#10B981]" />
+                          <Fingerprint size={14} className="text-[#EC4899]" />
                           <span className="font-mono text-xs text-[#F9FAFB]">{session.ip_address || 'Unknown IP'}</span>
                         </div>
                         <p className="font-mono text-[10px] text-[#4B5563]">
@@ -230,7 +230,7 @@ export default function DashboardPage({ onNavigate }) {
               <div className="space-y-6 animate-fade-in" data-testid="analytics-panel">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <StatCard icon={ChartLine} label="Total Attempts" value={analytics.total_attempts} />
-                  <StatCard icon={ShieldCheck} label="Successful" value={analytics.successful} valueColor="#10B981" />
+                  <StatCard icon={ShieldCheck} label="Successful" value={analytics.successful} valueColor="#EC4899" />
                   <StatCard icon={ShieldWarning} label="Failed" value={analytics.failed} valueColor="#EF4444" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -249,7 +249,7 @@ export default function DashboardPage({ onNavigate }) {
                         <div key={day.date} className="flex items-center gap-3">
                           <span className="font-mono text-[10px] text-[#4B5563] w-20 flex-shrink-0">{day.date.slice(5)}</span>
                           <div className="flex-1 h-4 bg-[#0F1115] rounded-sm overflow-hidden flex">
-                            <div className="h-full bg-[#10B981]/40" style={{ width: `${(day.success / maxVal) * 100}%` }} />
+                            <div className="h-full bg-[#EC4899]/40" style={{ width: `${(day.success / maxVal) * 100}%` }} />
                             <div className="h-full bg-[#EF4444]/40" style={{ width: `${(day.failed / maxVal) * 100}%` }} />
                           </div>
                           <span className="font-mono text-[10px] text-[#9CA3AF] w-8 text-right">{total}</span>
@@ -259,7 +259,7 @@ export default function DashboardPage({ onNavigate }) {
                     {analytics.daily_stats.length === 0 && <p className="font-mono text-xs text-[#4B5563]">No data available</p>}
                   </div>
                   <div className="flex gap-4 mt-3 font-mono text-[10px]">
-                    <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#10B981]/40 inline-block" /> Success</span>
+                    <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#EC4899]/40 inline-block" /> Success</span>
                     <span className="flex items-center gap-1"><span className="w-2 h-2 bg-[#EF4444]/40 inline-block" /> Failed</span>
                   </div>
                 </div>
@@ -276,7 +276,7 @@ function StatCard({ icon: Icon, label, value, subtext, valueColor = '#F9FAFB' })
   return (
     <div className="terminal-card p-4" data-testid={`stat-${label.toLowerCase().replace(/\s/g, '-')}`}>
       <div className="flex items-center gap-2 mb-2">
-        <Icon size={16} className="text-[#10B981]" />
+        <Icon size={16} className="text-[#EC4899]" />
         <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#4B5563]">{label}</span>
       </div>
       <div className="font-mono text-2xl font-bold" style={{ color: valueColor }}>{value}</div>
@@ -288,9 +288,9 @@ function StatCard({ icon: Icon, label, value, subtext, valueColor = '#F9FAFB' })
 function SecurityItem({ label, active }) {
   return (
     <div className="flex items-center gap-2">
-      <div className={`w-1.5 h-1.5 rounded-full ${active ? 'bg-[#10B981]' : 'bg-[#4B5563]'}`} />
-      <span className={`font-mono text-xs ${active ? 'text-[#10B981]' : 'text-[#4B5563]'}`}>{label}</span>
-      <span className={`font-mono text-[10px] ml-auto ${active ? 'text-[#10B981]' : 'text-[#4B5563]'}`}>
+      <div className={`w-1.5 h-1.5 rounded-full ${active ? 'bg-[#EC4899]' : 'bg-[#4B5563]'}`} />
+      <span className={`font-mono text-xs ${active ? 'text-[#EC4899]' : 'text-[#4B5563]'}`}>{label}</span>
+      <span className={`font-mono text-[10px] ml-auto ${active ? 'text-[#EC4899]' : 'text-[#4B5563]'}`}>
         {active ? 'ACTIVE' : 'INACTIVE'}
       </span>
     </div>
@@ -301,10 +301,10 @@ function LogEntry({ log, detailed = false }) {
   const time = new Date(log.timestamp).toLocaleString();
   return (
     <div className={`log-entry flex items-start gap-3 p-2 rounded-sm border ${severityBg[log.severity] || severityBg.info}`} data-testid={`log-${log.id}`}>
-      <div className={`w-1 h-1 rounded-full mt-1.5 flex-shrink-0 ${log.severity === 'critical' ? 'bg-[#EF4444]' : log.severity === 'warning' ? 'bg-[#F59E0B]' : 'bg-[#10B981]'}`} />
+      <div className={`w-1 h-1 rounded-full mt-1.5 flex-shrink-0 ${log.severity === 'critical' ? 'bg-[#EF4444]' : log.severity === 'warning' ? 'bg-[#F59E0B]' : 'bg-[#EC4899]'}`} />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className={`font-mono text-xs font-medium ${severityColors[log.severity] || 'text-[#10B981]'}`}>
+          <span className={`font-mono text-xs font-medium ${severityColors[log.severity] || 'text-[#EC4899]'}`}>
             {log.event_type}
           </span>
           <span className="font-mono text-[10px] text-[#4B5563]">{time}</span>

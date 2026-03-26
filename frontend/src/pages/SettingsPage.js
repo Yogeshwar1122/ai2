@@ -158,7 +158,7 @@ export default function SettingsPage({ onNavigate }) {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: '#030303' }}>
-        <div className="font-mono text-[#10B981] text-sm animate-pulse">Loading settings...</div>
+        <div className="font-mono text-[#EC4899] text-sm animate-pulse">Loading settings...</div>
       </div>
     );
   }
@@ -166,13 +166,13 @@ export default function SettingsPage({ onNavigate }) {
   return (
     <div className="min-h-screen" style={{ background: '#030303' }}>
       {/* Header */}
-      <header className="border-b border-[#10B981]/20 bg-[#0A0A0A]/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-[#EC4899]/20 bg-[#0A0A0A]/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-4">
-          <button data-testid="settings-back-button" onClick={() => onNavigate('dashboard')} className="text-[#9CA3AF] hover:text-[#10B981] transition-colors">
+          <button data-testid="settings-back-button" onClick={() => onNavigate('dashboard')} className="text-[#9CA3AF] hover:text-[#EC4899] transition-colors">
             <ArrowLeft size={20} />
           </button>
           <div className="flex items-center gap-2">
-            <Shield size={20} weight="duotone" className="text-[#10B981]" />
+            <Shield size={20} weight="duotone" className="text-[#EC4899]" />
             <span className="font-mono text-base font-bold tracking-tighter">Security Settings</span>
           </div>
         </div>
@@ -190,8 +190,8 @@ export default function SettingsPage({ onNavigate }) {
                   onClick={() => setActiveSection(s.id)}
                   className={`w-full flex items-center gap-2 px-3 py-2 font-mono text-xs rounded-sm transition-all text-left ${
                     activeSection === s.id
-                      ? 'bg-[#10B981]/10 border border-[#10B981]/40 text-[#10B981]'
-                      : 'text-[#9CA3AF] hover:text-[#F9FAFB] border border-transparent hover:border-[#10B981]/10'
+                      ? 'bg-[#EC4899]/10 border border-[#EC4899]/40 text-[#EC4899]'
+                      : 'text-[#9CA3AF] hover:text-[#F9FAFB] border border-transparent hover:border-[#EC4899]/10'
                   }`}
                 >
                   <s.icon size={16} />{s.label}
@@ -224,18 +224,18 @@ export default function SettingsPage({ onNavigate }) {
                   {hasTOTP ? 'Your authenticator is configured.' : 'Set up a TOTP authenticator for extra security.'}
                 </p>
                 {hasTOTP ? (
-                  <div className="flex items-center gap-2 p-3 bg-[#10B981]/10 border border-[#10B981]/30 rounded-sm">
-                    <Check size={18} className="text-[#10B981]" />
-                    <span className="font-mono text-xs text-[#10B981]">Authenticator Active</span>
+                  <div className="flex items-center gap-2 p-3 bg-[#EC4899]/10 border border-[#EC4899]/30 rounded-sm">
+                    <Check size={18} className="text-[#EC4899]" />
+                    <span className="font-mono text-xs text-[#EC4899]">Authenticator Active</span>
                   </div>
                 ) : totpSetup ? (
                   <div className="space-y-4">
                     <div className="flex justify-center p-4 bg-white rounded-sm">
                       <img src={totpSetup.qr_code} alt="QR Code" className="w-48 h-48" data-testid="totp-qr-code" />
                     </div>
-                    <div className="p-3 bg-[#0F1115] border border-[#10B981]/10 rounded-sm">
+                    <div className="p-3 bg-[#0F1115] border border-[#EC4899]/10 rounded-sm">
                       <p className="font-mono text-[10px] uppercase tracking-widest text-[#4B5563] mb-1">Secret Key</p>
-                      <p className="font-mono text-xs text-[#10B981] break-all" data-testid="totp-secret">{totpSetup.secret}</p>
+                      <p className="font-mono text-xs text-[#EC4899] break-all" data-testid="totp-secret">{totpSetup.secret}</p>
                     </div>
                     <div>
                       <label className="font-mono text-xs uppercase tracking-[0.15em] text-[#9CA3AF] block mb-2">Verify Code</label>
@@ -315,10 +315,10 @@ export default function SettingsPage({ onNavigate }) {
                 </div>
                 <div className="space-y-3">
                   {devices.map(device => (
-                    <div key={device.id} className="flex items-center justify-between p-3 bg-[#0F1115] border border-[#10B981]/10 rounded-sm" data-testid={`device-${device.id}`}>
+                    <div key={device.id} className="flex items-center justify-between p-3 bg-[#0F1115] border border-[#EC4899]/10 rounded-sm" data-testid={`device-${device.id}`}>
                       <div>
                         <div className="flex items-center gap-2">
-                          <Fingerprint size={14} className="text-[#10B981]" />
+                          <Fingerprint size={14} className="text-[#EC4899]" />
                           <span className="font-mono text-xs text-[#F9FAFB]">{device.device_name}</span>
                         </div>
                         <p className="font-mono text-[10px] text-[#4B5563] mt-1">
@@ -352,7 +352,7 @@ export default function SettingsPage({ onNavigate }) {
                         className="terminal-input pr-8"
                         placeholder="Enter current password"
                       />
-                      <button type="button" onClick={() => setShowPasswords(!showPasswords)} className="absolute right-0 top-1/2 -translate-y-1/2 text-[#4B5563] hover:text-[#10B981]">
+                      <button type="button" onClick={() => setShowPasswords(!showPasswords)} className="absolute right-0 top-1/2 -translate-y-1/2 text-[#4B5563] hover:text-[#EC4899]">
                         {showPasswords ? <EyeSlash size={16} /> : <Eye size={16} />}
                       </button>
                     </div>
@@ -383,7 +383,7 @@ export default function SettingsPage({ onNavigate }) {
 
 function LockToggle({ label, description, active, onToggle, disabled = false, testId }) {
   return (
-    <div className={`flex items-center justify-between p-3 bg-[#0F1115] border rounded-sm transition-all ${active ? 'border-[#10B981]/30' : 'border-[#10B981]/10'} ${disabled ? 'opacity-50' : ''}`}>
+    <div className={`flex items-center justify-between p-3 bg-[#0F1115] border rounded-sm transition-all ${active ? 'border-[#EC4899]/30' : 'border-[#EC4899]/10'} ${disabled ? 'opacity-50' : ''}`}>
       <div>
         <p className="font-mono text-xs text-[#F9FAFB]">{label}</p>
         <p className="font-sans text-[10px] text-[#4B5563] mt-0.5">{description}</p>
@@ -392,7 +392,7 @@ function LockToggle({ label, description, active, onToggle, disabled = false, te
       <button
         data-testid={testId}
         onClick={() => !disabled && onToggle(!active)}
-        className={`w-10 h-5 rounded-full transition-all relative ${active ? 'bg-[#10B981]' : 'bg-[#4B5563]'} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+        className={`w-10 h-5 rounded-full transition-all relative ${active ? 'bg-[#EC4899]' : 'bg-[#4B5563]'} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
       >
         <div className={`w-4 h-4 rounded-full bg-[#030303] absolute top-0.5 transition-all ${active ? 'left-[22px]' : 'left-0.5'}`} />
       </button>

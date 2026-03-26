@@ -11,15 +11,15 @@
   --bg-glass: rgba(10, 10, 10, 0.85);
   --text-primary: #F9FAFB;
   --text-secondary: #9CA3AF;
-  --text-accent: #10B981;
+  --text-accent: #EC4899;
   --text-muted: #4B5563;
-  --accent-primary: #10B981;
-  --accent-glow: rgba(16, 185, 129, 0.4);
+  --accent-primary: #EC4899;
+  --accent-glow: rgba(236, 72, 153, 0.4);
   --accent-warning: #F59E0B;
   --accent-danger: #EF4444;
-  --terminal-green: #00FF41;
-  --border-default: rgba(16, 185, 129, 0.2);
-  --border-highlight: rgba(16, 185, 129, 0.6);
+  --terminal-green: #FF69B4;
+  --border-default: rgba(236, 72, 153, 0.2);
+  --border-highlight: rgba(236, 72, 153, 0.6);
   --border-danger: rgba(239, 68, 68, 0.4);
 }
 
@@ -89,13 +89,13 @@ body::before {
 
 /* Glow effects */
 .glow-green {
-  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.5));
+  filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.5));
 }
 .glow-border {
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.15);
 }
 .glow-text {
-  text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
 }
 
 /* Card styles */
@@ -109,12 +109,12 @@ body::before {
 }
 .terminal-card:hover {
   border-color: var(--border-highlight);
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.15);
 }
 
 /* Button styles */
 .btn-primary {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(236, 72, 153, 0.1);
   border: 1px solid var(--accent-primary);
   color: var(--accent-primary);
   font-family: 'JetBrains Mono', monospace;
@@ -208,8 +208,8 @@ body::before {
 
 /* Pulse animation */
 @keyframes pulse-green {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(236, 72, 153, 0); }
 }
 .pulse-green {
   animation: pulse-green 2s infinite;
@@ -226,7 +226,7 @@ body::before {
 }
 .otp-container input:focus {
   border-color: var(--accent-primary) !important;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.3) !important;
 }
 
 /* Status badge */

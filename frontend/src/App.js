@@ -55,12 +55,12 @@ function AppContent() {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: '#030303' }}>
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 border border-[#10B981]/40 rounded-sm mb-4 animate-pulse">
-            <svg className="w-6 h-6 text-[#10B981]" fill="currentColor" viewBox="0 0 256 256">
+          <div className="inline-flex items-center justify-center w-12 h-12 border border-[#EC4899]/40 rounded-sm mb-4 animate-pulse">
+            <svg className="w-6 h-6 text-[#EC4899]" fill="currentColor" viewBox="0 0 256 256">
               <path d="M208,40H48A16,16,0,0,0,32,56V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40Zm0,160H48V56H208V200Z" />
             </svg>
           </div>
-          <p className="font-mono text-xs text-[#10B981] tracking-widest uppercase">Initializing...</p>
+          <p className="font-mono text-xs text-[#EC4899] tracking-widest uppercase">Initializing...</p>
         </div>
       </div>
     );
@@ -102,7 +102,7 @@ function App() {
         toastOptions={{
           style: {
             background: '#0A0A0A',
-            border: '1px solid rgba(16, 185, 129, 0.3)',
+            border: '1px solid rgba(236, 72, 153, 0.3)',
             color: '#F9FAFB',
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.75rem',
